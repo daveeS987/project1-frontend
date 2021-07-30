@@ -1,4 +1,4 @@
-# Project1 - FrontEnd
+# Project1 - Front End
 
 ## Author: Davee Sok
 
