@@ -45,7 +45,6 @@ function Details(props) {
     <>
       <Layout>
         <h2>This a Dynamic Details Page</h2>
-        <h3>Page : {props.number}</h3>
       </Layout>
     </>
   );
