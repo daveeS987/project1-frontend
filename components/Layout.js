@@ -20,7 +20,7 @@ const theme = createTheme({
   },
 });
 
-function Layout({ children }) {
+function Layout({ children, categories }) {
   return (
     <>
       <Head>
@@ -31,7 +31,7 @@ function Layout({ children }) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header categories={categories} />
         <CategoryList />
         {children}
         <Footer />

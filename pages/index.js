@@ -1,22 +1,31 @@
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
+import axios from 'axios';
 
 import { wrapper } from '../store/store';
 import Layout from '../components/Layout';
-// import Counter from '../components/Counter';
 
 export const getStaticProps = wrapper.getStaticProps((store) => async () => {
+  const response = await axios.get(`${process.env.API}/api/v1/category`);
+
+  const categories = response.data.results.map((obj) => {
+    return {
+      id: obj._id.toString(),
+      name: obj.name,
+      subCategory: obj.subCategory,
+    };
+  });
+
   return {
-    props: {},
+    props: { categories },
   };
 });
 
-function Home(props) {
+function Home({ categories }) {
   return (
     <>
-      <Layout>
+      <Layout categories={categories}>
         <h1>Home Page</h1>
-        {/* <Counter /> */}
       </Layout>
     </>
   );

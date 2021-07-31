@@ -83,7 +83,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function Header({ categories }) {
+  console.log('🚀 ~ categories: ', categories);
+
   const classes = useStyles();
 
   return (
