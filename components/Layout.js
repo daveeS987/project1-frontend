@@ -31,8 +31,8 @@ function Layout({ children, categories }) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header categories={categories} />
-        <CategoryList />
+        <Header />
+        <CategoryList categories={categories} />
         {children}
         <Footer />
       </ThemeProvider>

@@ -1,6 +1,8 @@
 import React from 'react';
 
-function CategoryList() {
+function CategoryList({ categories }) {
+  console.log('🚀 ~ categories line 4', categories);
+
   return (
     <div>
       <h1>CategoryList</h1>

@@ -83,9 +83,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header({ categories }) {
-  console.log('🚀 ~ categories: ', categories);
-
+export default function Header() {
   const classes = useStyles();
 
   return (
