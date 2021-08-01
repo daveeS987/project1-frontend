@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    marginBottom: '.6rem',
   },
   sort: {
     display: 'none',
@@ -25,25 +26,38 @@ const useStyles = makeStyles((theme) => ({
     },
     marginRight: '1rem',
   },
+  chips: {
+    fontSize: '.9rem',
+    padding: '.2rem',
+    height: '2rem',
+    margin: '.2rem',
+  },
 }));
 
 function ProductCategoryHeading() {
   const classes = useStyles();
-  const currentCategory = useSelector((state) => state.activeCategory.active);
+  const activeCategory = useSelector((state) => state.activeCategory.active);
   const sortBy = useSelector((state) => state.sortProducts.by);
 
   return (
     <>
       <div className={classes.main}>
         <Typography variant="h5" className={classes.title}>
-          {currentCategory}
+          {activeCategory.name}
         </Typography>
         <Typography variant="body1" className={classes.sort}>
           Sort by: {sortBy}
         </Typography>
       </div>
       <div>
-        <Chip>Testing</Chip>
+        {activeCategory.subCategory.map((category) => (
+          <Chip
+            label={category}
+            variant="outlined"
+            className={classes.chips}
+            key={Math.random()}
+          />
+        ))}
       </div>
     </>
   );

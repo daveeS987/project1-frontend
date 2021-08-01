@@ -1,5 +1,4 @@
 import React from 'react';
-import { When } from 'react-if';
 import { useSelector } from 'react-redux';
 import { Breadcrumbs, Link, makeStyles } from '@material-ui/core';
 
@@ -13,8 +12,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CategoryBreadCrumbs() {
   const classes = useStyles();
-  const activeCategory = useSelector((state) => state.activeCategory.active);
-  console.log('activeCategory: ', activeCategory);
+  const activeCategoryName = useSelector(
+    (state) => state.activeCategory.active.name
+  );
 
   function handleClick(event) {
     event.preventDefault();
@@ -30,11 +30,9 @@ export default function CategoryBreadCrumbs() {
         Home
       </Link>
 
-      <When condition={activeCategory}>
-        <Link color="inherit" onClick={handleClick}>
-          {activeCategory}
-        </Link>
-      </When>
+      <Link color="inherit" onClick={handleClick}>
+        {activeCategoryName}
+      </Link>
     </Breadcrumbs>
   );
 }

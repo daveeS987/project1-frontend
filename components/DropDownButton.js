@@ -31,8 +31,13 @@ export default function DropDownButton({ name, id, subCategory }) {
   const anchorRef = React.useRef(null);
 
   const handleToggle = (name) => {
+    const newActiveCategory = {
+      name,
+      id,
+      subCategory,
+    };
+    dispatch(changeActiveCategory(newActiveCategory));
     dispatch(changeview('category'));
-    dispatch(changeActiveCategory(name));
     setOpen((prevOpen) => !prevOpen);
   };
 
@@ -40,7 +45,6 @@ export default function DropDownButton({ name, id, subCategory }) {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-
     setOpen(false);
   };
 
@@ -66,6 +70,8 @@ export default function DropDownButton({ name, id, subCategory }) {
       <Button
         ref={anchorRef}
         onClick={() => handleToggle(name)}
+        onMouseOver={() => setOpen(true)}
+        onMouseOut={() => setOpen(false)}
         key={id}
         id={id}
         className={classes.button}
