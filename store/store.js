@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 
-import counter from './counterSlice';
-// import sliceExample from './sliceExample.js';
+// import counter from './counterSlice';
+import view from './viewSlice';
 
 const makeStore = () =>
   configureStore({
     reducer: {
-      counter,
-      // sliceExample
+      // counter,
+      view,
     },
     devTools: true,
   });

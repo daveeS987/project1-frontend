@@ -34,7 +34,7 @@ function Layout({ children, categories }) {
       <ThemeProvider theme={theme}>
         <Header />
         <CategoryList categories={categories} />
-        <DropDownButton />
+
         {children}
         <Footer />
       </ThemeProvider>
