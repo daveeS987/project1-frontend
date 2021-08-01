@@ -1,5 +1,4 @@
 import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
-// import { When, Switch, Case, Default } from 'react-if';
 
 import Products from './Products.js';
 import ProductCategoryHeading from './ProductCategoryHeading.js';
@@ -44,20 +43,8 @@ export default function CategoryMain() {
         <Grid item xs={12}>
           <ProductCategoryHeading />
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper className={classes.paper}>RightSide</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper className={classes.paper}>RightSide</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper className={classes.paper}>RightSide</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper className={classes.paper}>RightSide</Paper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper className={classes.paper}>RightSide</Paper>
+        <Grid container item xs={12}>
+          <Products />
         </Grid>
       </Grid>
     </Grid>
