@@ -32,7 +32,7 @@ function Layout({ children, categories }) {
       </Head>
       <ThemeProvider theme={theme}>
         <Header />
-        {/* <CategoryList categories={categories} /> */}
+        <CategoryList categories={categories} />
 
         {children}
         <Footer />
