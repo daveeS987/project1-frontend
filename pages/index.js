@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { Switch, Case, Default } from 'react-if';
@@ -12,7 +12,7 @@ import Layout from '../components/Layout';
 import { changeview } from '../store/viewSlice';
 
 export const getStaticProps = wrapper.getStaticProps((store) => async () => {
-  const response = await axios.get(`${process.env.API}/api/v1/category`);
+  const response = await axios.get(`${process.env.NEXT_API}/api/v1/category`);
 
   const categories = response.data.results.map((obj) => {
     return {

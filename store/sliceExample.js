@@ -1,5 +1,5 @@
 // This slice is not wired up. This is just an example of how you could make api calls within thunk to manage state.
-
+/*
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import axios from 'axios';
@@ -78,3 +78,4 @@ const exampleSlice = createSlice({
 const { actions, reducer } = exampleSlice;
 export const { simpleIncrement } = actions;
 export default reducer;
+*/

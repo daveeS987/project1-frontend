@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 import { wrapper } from '../store/store';
@@ -27,3 +28,4 @@ function StaticPropsExamplePage({ result1, result2 }) {
 }
 
 export default StaticPropsExamplePage;
+*/
