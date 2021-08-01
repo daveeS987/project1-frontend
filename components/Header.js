@@ -104,7 +104,7 @@ export default function Header() {
             className={classes.title}
             variant="h5"
             noWrap
-            // onClick={() => handleChangeView('home')}
+            onClick={() => handleChangeView('home')}
           >
             OfferUp Clone
           </Typography>
