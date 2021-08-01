@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import Header from './Header.js';
 import CategoryList from './CategoryList.js';
+import DropDownButton from './DropDownButton';
 import Footer from './Footer.js';
 
 import { ThemeProvider } from '@material-ui/styles';
@@ -33,6 +34,7 @@ function Layout({ children, categories }) {
       <ThemeProvider theme={theme}>
         <Header />
         <CategoryList categories={categories} />
+        <DropDownButton />
         {children}
         <Footer />
       </ThemeProvider>
