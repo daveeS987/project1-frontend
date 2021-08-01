@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 import { changeview } from '../store/viewSlice';
+import { changeActiveCategory } from '../store/activeCategory';
 
 export default function DropDownButton({ name, id, subCategory }) {
   const classes = useStyles();
@@ -29,8 +30,9 @@ export default function DropDownButton({ name, id, subCategory }) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
-  const handleToggle = () => {
+  const handleToggle = (name) => {
     dispatch(changeview('category'));
+    dispatch(changeActiveCategory(name));
     setOpen((prevOpen) => !prevOpen);
   };
 
@@ -63,7 +65,7 @@ export default function DropDownButton({ name, id, subCategory }) {
     <>
       <Button
         ref={anchorRef}
-        onClick={handleToggle}
+        onClick={() => handleToggle(name)}
         key={id}
         id={id}
         className={classes.button}

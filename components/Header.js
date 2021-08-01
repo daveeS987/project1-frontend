@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
     },
     fontWeight: 600,
+    fontSize: '1.7rem',
     cursor: 'pointer',
   },
   search: {
@@ -85,6 +86,17 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  header: {
+    boxShadow: 'none',
+  },
+  bar: {
+    height: '4rem',
+    paddingLeft: '1rem',
+    paddingRight: '1.2rem',
+  },
+  icon: {
+    fontSize: '1.8rem',
+  },
 }));
 
 export default function Header() {
@@ -98,8 +110,8 @@ export default function Header() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar className={classes.header}>
+      <AppBar position="static" className={classes.header}>
+        <Toolbar className={classes.bar}>
           <Typography
             className={classes.title}
             variant="h5"
@@ -127,7 +139,7 @@ export default function Header() {
               onClick={() => handleChangeView('accounts')}
             >
               <Badge badgeContent={3} color="secondary">
-                <FavoriteBorderSharpIcon />
+                <FavoriteBorderSharpIcon className={classes.icon} />
               </Badge>
             </IconButton>
             <IconButton
@@ -135,7 +147,7 @@ export default function Header() {
               onClick={() => handleChangeView('accounts')}
             >
               <Badge badgeContent={3} color="secondary">
-                <MailIcon />
+                <MailIcon className={classes.icon} />
               </Badge>
             </IconButton>
             <IconButton
@@ -143,7 +155,7 @@ export default function Header() {
               onClick={() => handleChangeView('accounts')}
             >
               <Badge badgeContent={12} color="secondary">
-                <LocalOfferOutlinedIcon />
+                <LocalOfferOutlinedIcon className={classes.icon} />
               </Badge>
             </IconButton>
             <IconButton
@@ -151,7 +163,7 @@ export default function Header() {
               color="inherit"
               onClick={() => handleChangeView('accounts')}
             >
-              <AccountCircle />
+              <AccountCircle className={classes.icon} />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

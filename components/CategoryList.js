@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
     borderBottom: '1px solid #e0e0e0',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    width: '99%',
   },
 }));
 
