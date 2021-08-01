@@ -1,9 +1,10 @@
 import React from 'react';
+// import { When } from 'react-if';
 
 import CategoryBreadCrumbs from './CategoryBreadCrumbs';
 import CategoryMain from './CategoryMain';
 
-function ViewCategory() {
+function ViewWithCategories() {
   return (
     <div>
       <CategoryBreadCrumbs />
@@ -12,4 +13,4 @@ function ViewCategory() {
   );
 }
 
-export default ViewCategory;
+export default ViewWithCategories;

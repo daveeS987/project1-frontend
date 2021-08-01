@@ -5,7 +5,7 @@ import { Switch, Case, Default } from 'react-if';
 
 import ViewHome from '../components/ViewHome';
 import ViewAccount from '../components/ViewAccount';
-import ViewCategory from '../components/ViewCategory';
+import ViewWithCategories from '../components/ViewWithCategories';
 import { wrapper } from '../store/store';
 import Layout from '../components/Layout';
 
@@ -41,7 +41,7 @@ function Home({ categories }) {
       <Layout categories={categories}>
         <Switch>
           <Case condition={view === 'category'}>
-            <ViewCategory />
+            <ViewWithCategories />
           </Case>
           <Case condition={view === 'accounts'}>
             <ViewAccount />

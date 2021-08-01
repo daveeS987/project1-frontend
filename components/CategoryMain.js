@@ -1,15 +1,19 @@
-import { Grid, Box, Paper, makeStyles, Hidden } from '@material-ui/core';
+import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
+// import { When, Switch, Case, Default } from 'react-if';
+
+import Products from './Products.js';
+import ProductCategoryHeading from './ProductCategoryHeading.js';
 
 const useStyles = makeStyles((theme) => ({
   rightSide: {
-    // border: '1px solid red',
+    marginRight: '1rem',
+    marginLeft: '0.6rem',
   },
   aside: {
-    // width: '18rem',
-    // border: '1px solid red',
+    marginLeft: '1rem',
   },
   paper: {
-    // padding: theme.spacing(2),
+    padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -37,8 +41,8 @@ export default function CategoryMain() {
       </Box>
 
       <Grid spacing={2} container item xs className={classes.rightSide}>
-        <Grid item xs={12} sm={6} md={4}>
-          <Paper className={classes.paper}>RightSide</Paper>
+        <Grid item xs={12}>
+          <ProductCategoryHeading />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Paper className={classes.paper}>RightSide</Paper>

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CategoryList({ categories }) {
+export default function HeaderCategory({ categories }) {
   const classes = useStyles();
 
   return (

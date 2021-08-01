@@ -1,7 +1,7 @@
 import React from 'react';
 import { When } from 'react-if';
 import { useSelector } from 'react-redux';
-import { Typography, Breadcrumbs, Link, makeStyles } from '@material-ui/core';
+import { Breadcrumbs, Link, makeStyles } from '@material-ui/core';
 
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
