@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+
 import {
   Badge,
   IconButton,
@@ -15,6 +17,8 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 import MailIcon from '@material-ui/icons/Mail';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+
+import { changeview } from '../store/viewSlice';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -85,12 +89,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  function handleChangeView(view) {
+    console.log('changeview home was clicked');
+    dispatch(changeview(view));
+  }
 
   return (
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar className={classes.header}>
-          <Typography className={classes.title} variant="h5" noWrap>
+          <Typography
+            className={classes.title}
+            variant="h5"
+            noWrap
+            onClick={() => handleChangeView('home')}
+          >
             OfferUp Clone
           </Typography>
           <div className={classes.search}>
@@ -107,22 +122,35 @@ export default function Header() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              onClick={() => handleChangeView('accounts')}
+            >
               <Badge badgeContent={3} color="secondary">
                 <FavoriteBorderSharpIcon />
               </Badge>
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              onClick={() => handleChangeView('accounts')}
+            >
               <Badge badgeContent={3} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton color="inherit">
+            <IconButton
+              color="inherit"
+              onClick={() => handleChangeView('accounts')}
+            >
               <Badge badgeContent={12} color="secondary">
                 <LocalOfferOutlinedIcon />
               </Badge>
             </IconButton>
-            <IconButton edge="end" color="inherit">
+            <IconButton
+              edge="end"
+              color="inherit"
+              onClick={() => handleChangeView('accounts')}
+            >
               <AccountCircle />
             </IconButton>
           </div>

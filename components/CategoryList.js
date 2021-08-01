@@ -3,10 +3,11 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 
+import DropDownButton from './DropDownButton';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
     '& > *': {
       margin: theme.spacing(1),
@@ -16,23 +17,28 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
     },
     borderBottom: '1px solid #e0e0e0',
-  },
-  button: {
-    textTransform: 'none',
+    justifyContent: 'space-around',
   },
 }));
 
 export default function CategoryList({ categories }) {
   const classes = useStyles();
-  console.log('categories: ', categories);
 
   return (
-    <div className={classes.root}>
-      <ButtonGroup variant="text" color="inherit" fullWidth>
+    <div>
+      <ButtonGroup
+        variant="text"
+        color="inherit"
+        fullWidth
+        className={classes.root}
+      >
         {categories.map((obj) => (
-          <Button className={classes.button} key={obj.id}>
-            {obj.name}
-          </Button>
+          <DropDownButton
+            key={obj.id}
+            name={obj.name}
+            id={obj.id}
+            subCategory={obj.subCategory}
+          />
         ))}
       </ButtonGroup>
     </div>
