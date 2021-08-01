@@ -1,16 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 
-// import counter from './counterSlice';
-import view from './viewSlice';
-import activeCategory from './activeCategory';
+import view from './viewSlice.js';
+import activeCategory from './activeCategory.js';
+import sortProducts from './sortProductsSlice.js';
 
 const makeStore = () =>
   configureStore({
     reducer: {
-      // counter,
       view,
       activeCategory,
+      sortProducts,
     },
     devTools: true,
   });

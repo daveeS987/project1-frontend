@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import Header from './Header.js';
-import CategoryList from './CategoryList.js';
+import HeaderCategory from './HeaderCategories.js';
 import Footer from './Footer.js';
 
 import { ThemeProvider } from '@material-ui/styles';
@@ -32,7 +32,7 @@ function Layout({ children, categories }) {
       </Head>
       <ThemeProvider theme={theme}>
         <Header />
-        <CategoryList categories={categories} />
+        <HeaderCategory categories={categories} />
 
         {children}
         <Footer />
