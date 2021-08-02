@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 function ProductCategoryHeading() {
   const classes = useStyles();
   const activeCategory = useSelector((state) => state.activeCategory.active);
-  const sortBy = useSelector((state) => state.sortProducts.by);
+  // const sortBy = useSelector((state) => state.sortProducts.by);
 
   return (
     <>
@@ -47,7 +47,7 @@ function ProductCategoryHeading() {
         </Typography>
         <ProductSortDropDown />
       </div>
-      <div className={classes.chipsContainer}>
+      {/* <div className={classes.chipsContainer}>
         {activeCategory.subCategory.map((category) => (
           <Chip
             label={category}
@@ -56,7 +56,7 @@ function ProductCategoryHeading() {
             key={Math.random()}
           />
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

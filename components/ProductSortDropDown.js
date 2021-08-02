@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     textTransform: 'none',
-    color: '#616161',
+    color: theme.palette.text.secondary,
     fontSize: '1rem',
   },
   menuItem: {
-    color: '#616161',
+    color: theme.palette.text.secondary,
   },
 }));
 
