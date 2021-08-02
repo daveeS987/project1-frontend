@@ -15,7 +15,10 @@ const theme = createTheme({
       contrastText: '#079b74',
     },
     text: {
-      primary: '#05a77e',
+      // primary: '#05a77e',
+      primary: '#00A87E',
+      // secondary: '#616161',
+      secondary: '#333333',
     },
   },
 });

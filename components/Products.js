@@ -38,6 +38,7 @@ function Products() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.entities);
+  console.log('products: ', products);
 
   return (
     <Grid container spacing={3}>
@@ -51,11 +52,24 @@ function Products() {
                 title={obj.name}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h6" noWrap>
                   {obj.name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  noWrap
+                >
                   {obj.description}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  noWrap
+                >
+                  {obj?.price}
                 </Typography>
               </CardContent>
             </CardActionArea>
