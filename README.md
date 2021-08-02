@@ -5,7 +5,7 @@
 ## Links and Resources
 
 <!-- Back End Address -->
-<!-- https://offerup-clone.herokuapp.com -->
+<!-- https://pj1-bke-ofc.herokuapp.com -->
 <!-- http://localhost:5000 -->
 
 <!-- Front End -->
