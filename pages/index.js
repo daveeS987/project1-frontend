@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { Switch, Case, Default } from 'react-if';
+import { useEffect } from 'react';
 
 import ViewHome from '../components/ViewHome';
 import ViewAccount from '../components/ViewAccount';
@@ -10,6 +11,7 @@ import { wrapper } from '../store/store';
 import Layout from '../components/Layout';
 
 import { changeview } from '../store/viewSlice';
+import { getProducts } from '../store/productSlice';
 
 export const getStaticProps = wrapper.getStaticProps((store) => async () => {
   const response = await axios.get(`${process.env.NEXT_API}/api/v1/category`);
@@ -35,6 +37,10 @@ function Home({ categories }) {
   function changeView(view) {
     dispatch(changeview(view));
   }
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
 
   return (
     <>

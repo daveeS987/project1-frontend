@@ -15,9 +15,17 @@ const useStyles = makeStyles((theme) => ({
   button: {
     textTransform: 'none',
     color: '#616161',
+    zIndex: 2000,
+  },
+  paper: {
+    zIndex: 2000,
   },
   menuItem: {
     color: '#616161',
+    zIndex: 2000,
+  },
+  menulist: {
+    zIndex: 2000,
   },
 }));
 
@@ -94,15 +102,20 @@ export default function DropDownButton({ name, id, subCategory }) {
                 placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >
-            <Paper>
+            <Paper className={classes.paper}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
+                  onMouseOver={() => setOpen(true)}
+                  onMouseOut={() => setOpen(false)}
                   id="menu-list-grow"
                   onKeyDown={handleListKeyDown}
+                  className={classes.menulist}
                 >
                   {subCategory.map((category) => (
                     <MenuItem
+                      onMouseOver={() => setOpen(true)}
+                      onMouseOut={() => setOpen(false)}
                       onClick={handleClose}
                       key={Math.random()}
                       className={classes.menuItem}
