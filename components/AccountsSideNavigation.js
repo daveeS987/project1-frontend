@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FormAccount() {
+export default function AccountsSideNavigation() {
   const classes = useStyles();
 
   return (

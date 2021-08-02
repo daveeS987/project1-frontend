@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AccountSettings() {
+function AccountSettingsView() {
   const classes = useStyles();
 
   return (
@@ -33,4 +33,4 @@ function AccountSettings() {
   );
 }
 
-export default AccountSettings;
+export default AccountSettingsView;

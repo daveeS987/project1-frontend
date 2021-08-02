@@ -1,7 +1,7 @@
 import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
 
-import FormAccount from './FormAccount.js';
-import AccountSettings from './AccountSettings.js';
+import AccountsSideNavigation from './AccountsSideNavigation.js';
+import AccountSettingsView from './AccountSettingsView.js';
 
 const useStyles = makeStyles((theme) => ({
   rightSide: {
@@ -36,12 +36,12 @@ export default function AccountsMain() {
         className={classes.aside}
         item
       >
-        <FormAccount />
+        <AccountsSideNavigation />
       </Box>
 
       <Grid spacing={2} container item xs className={classes.rightSide}>
         <Grid container item xs={12}>
-          <AccountSettings />
+          <AccountSettingsView />
         </Grid>
       </Grid>
     </Grid>
