@@ -34,6 +34,15 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '2rem',
     paddingBottom: '0.4rem',
   },
+  divide: {
+    marginTop: '1rem',
+    marginBottom: '0.8rem',
+  },
+  viewProfile: {
+    paddingLeft: '1rem',
+    paddingTop: '0.4rem',
+    marginBottom: '0.3rem',
+  },
 }));
 
 export default function FormAccount() {
@@ -55,7 +64,6 @@ export default function FormAccount() {
           Payment & Deposit methods
         </Typography>
 
-        <br />
         <Typography variant="h6" className={classes.indent1}>
           Saves
         </Typography>
@@ -64,7 +72,6 @@ export default function FormAccount() {
           Saved Items
         </Typography>
 
-        <br />
         <Typography variant="h6" className={classes.indent1}>
           Account
         </Typography>
@@ -72,10 +79,12 @@ export default function FormAccount() {
         <Typography variant="body1" color="inherit" className={classes.indent2}>
           Account Settings
         </Typography>
-        <br />
-        <Divider variant="middle" />
-        <br />
-        <Typography>View Public Profile</Typography>
+
+        <Divider variant="middle" className={classes.divide} />
+
+        <Typography className={classes.viewProfile}>
+          View Public Profile
+        </Typography>
       </div>
     </div>
   );
