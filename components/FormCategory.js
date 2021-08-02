@@ -43,25 +43,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CategoryTable() {
+export default function FormCategory() {
   const classes = useStyles();
   const activeCategory = useSelector((state) => state.activeCategory.active);
+  console.log('🚀 ~ activeCategory', activeCategory);
 
   return (
     <div>
       <div className={classes.window}>
         <Typography variant={'body1'}>All Categories</Typography>
         <Typography className={classes.bolder}>
-          {activeCategory.name}
+          {activeCategory && activeCategory.name}
         </Typography>
 
-        {activeCategory.subCategory.map((category) => (
-          <li key={Math.random()} className={classes.list}>
-            <Typography variant="body2" color="inherit">
-              {category}
-            </Typography>
-          </li>
-        ))}
+        {activeCategory &&
+          activeCategory.subCategory.map((category) => (
+            <li key={Math.random()} className={classes.list}>
+              <Typography variant="body2" color="inherit">
+                {category}
+              </Typography>
+            </li>
+          ))}
         <br />
         <Divider variant="middle" />
         <br />
