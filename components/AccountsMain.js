@@ -40,7 +40,6 @@ export default function AccountsMain() {
       </Box>
 
       <Grid spacing={2} container item xs className={classes.rightSide}>
-        <Grid item xs={12}></Grid>
         <Grid container item xs={12}>
           <AccountSettings />
         </Grid>
