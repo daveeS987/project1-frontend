@@ -14,14 +14,14 @@ import {
 const useStyles = makeStyles((theme) => ({
   button: {
     textTransform: 'none',
-    color: '#616161',
+    color: theme.palette.text.secondary,
     zIndex: 2000,
   },
   paper: {
     zIndex: 2000,
   },
   menuItem: {
-    color: '#616161',
+    color: theme.palette.text.secondary,
     zIndex: 2000,
   },
   menulist: {

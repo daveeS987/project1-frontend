@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     textTransform: 'none',
-    color: '#616161',
+    color: theme.palette.text.secondary,
   },
   menuItem: {
     color: '#05a77e',

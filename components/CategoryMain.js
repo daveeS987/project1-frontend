@@ -2,6 +2,7 @@ import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
 
 import Products from './Products.js';
 import ProductCategoryHeading from './ProductCategoryHeading.js';
+import CategoryTable from './CategoryTable.js';
 
 const useStyles = makeStyles((theme) => ({
   rightSide: {
@@ -36,7 +37,7 @@ export default function CategoryMain() {
         className={classes.aside}
         item
       >
-        <Paper className={classes.paper}>Left Side</Paper>
+        <CategoryTable />
       </Box>
 
       <Grid spacing={2} container item xs className={classes.rightSide}>
