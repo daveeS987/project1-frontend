@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CategoryBreadCrumbs() {
+export default function CategoryBreadCrumb() {
   const classes = useStyles();
   const activeCategoryName = useSelector(
     (state) => state.activeCategory.active.name

@@ -1,8 +1,7 @@
 import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
 
-import Products from './Products.js';
-import ProductCategoryHeading from './ProductCategoryHeading.js';
-import FormCategory from './FormCategory.js';
+import FormAccount from './FormAccount.js';
+import AccountSettings from './AccountSettings.js';
 
 const useStyles = makeStyles((theme) => ({
   rightSide: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CategoryMain() {
+export default function AccountsMain() {
   const classes = useStyles();
 
   return (
@@ -37,15 +36,13 @@ export default function CategoryMain() {
         className={classes.aside}
         item
       >
-        <FormCategory />
+        <FormAccount />
       </Box>
 
       <Grid spacing={2} container item xs className={classes.rightSide}>
-        <Grid item xs={12}>
-          <ProductCategoryHeading />
-        </Grid>
+        <Grid item xs={12}></Grid>
         <Grid container item xs={12}>
-          <Products />
+          <AccountSettings />
         </Grid>
       </Grid>
     </Grid>

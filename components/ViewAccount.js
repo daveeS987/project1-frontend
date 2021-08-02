@@ -1,9 +1,12 @@
 import React from 'react';
+import AccountsBreadCrumb from './AccountsBreadCrumb';
+import AccountsMain from './AccountsMain';
 
 function ViewAccount() {
   return (
     <div>
-      <h1>Accounts View</h1>
+      <AccountsBreadCrumb />
+      <AccountsMain />
     </div>
   );
 }

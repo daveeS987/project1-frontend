@@ -1,13 +1,13 @@
 import React from 'react';
 // import { When } from 'react-if';
 
-import CategoryBreadCrumbs from './CategoryBreadCrumbs';
+import CategoryBreadCrumb from './CategoryBreadCrumb';
 import CategoryMain from './CategoryMain';
 
 function ViewWithCategories() {
   return (
     <div>
-      <CategoryBreadCrumbs />
+      <CategoryBreadCrumb />
       <CategoryMain />
     </div>
   );
