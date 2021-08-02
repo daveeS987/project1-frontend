@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: '1px solid #e0e0e0',
     justifyContent: 'space-between',
     width: '99%',
+    zIndex: 2000,
+  },
+  bar: {
+    zIndex: 2000,
   },
 }));
 
@@ -25,7 +29,7 @@ export default function HeaderCategory({ categories }) {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.bar}>
       <ButtonGroup
         variant="text"
         color="inherit"

@@ -1,12 +1,7 @@
 import { useSelector } from 'react-redux';
-import {
-  Grid,
-  Box,
-  Paper,
-  makeStyles,
-  Typography,
-  Chip,
-} from '@material-ui/core';
+import { makeStyles, Typography, Chip } from '@material-ui/core';
+
+import ProductSortDropDown from './ProductSortDropDown';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -27,11 +22,16 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '1rem',
   },
   chips: {
-    fontSize: '.9rem',
+    fontSize: '.8rem',
     padding: '.2rem',
-    height: '2rem',
+    height: '1.8rem',
     margin: '.2rem',
+    flexWrap: 'nowrap',
   },
+  // chipsContainer: {
+  //   display: 'flex',
+  //   flexWrap: 'nowrap',
+  // },
 }));
 
 function ProductCategoryHeading() {
@@ -45,11 +45,9 @@ function ProductCategoryHeading() {
         <Typography variant="h5" className={classes.title}>
           {activeCategory.name}
         </Typography>
-        <Typography variant="body1" className={classes.sort}>
-          Sort by: {sortBy}
-        </Typography>
+        <ProductSortDropDown />
       </div>
-      <div>
+      <div className={classes.chipsContainer}>
         {activeCategory.subCategory.map((category) => (
           <Chip
             label={category}

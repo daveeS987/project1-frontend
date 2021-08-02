@@ -1,51 +1,36 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import {
-  makeStyles,
-  Button,
-  MenuList,
-  MenuItem,
-  Popper,
-  Paper,
-  ClickAwayListener,
-  Grow,
-} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+  paper: {
+    marginRight: theme.spacing(2),
+  },
   button: {
     textTransform: 'none',
     color: '#616161',
-    zIndex: 2000,
-  },
-  paper: {
-    zIndex: 2000,
+    fontSize: '1rem',
   },
   menuItem: {
     color: '#616161',
-    zIndex: 2000,
-  },
-  menulist: {
-    zIndex: 2000,
   },
 }));
 
-import { changeview } from '../store/viewSlice';
-import { changeActiveCategory } from '../store/activeCategory';
-
-export default function DropDownButton({ name, id, subCategory }) {
+export default function MenuListComposition() {
   const classes = useStyles();
-  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
-  const handleToggle = (name) => {
-    const newActiveCategory = {
-      name,
-      id,
-      subCategory,
-    };
-    dispatch(changeActiveCategory(newActiveCategory));
-    dispatch(changeview('category'));
+  const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
@@ -53,6 +38,7 @@ export default function DropDownButton({ name, id, subCategory }) {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
+
     setOpen(false);
   };
 
@@ -74,18 +60,15 @@ export default function DropDownButton({ name, id, subCategory }) {
   }, [open]);
 
   return (
-    <>
+    <div className={classes.root}>
+      {/* <div> */}
       <Button
         ref={anchorRef}
-        onClick={() => handleToggle(name)}
-        onMouseOver={() => setOpen(true)}
-        onMouseOut={() => setOpen(false)}
-        key={id}
-        id={id}
+        onClick={handleToggle}
         className={classes.button}
         color="inherit"
       >
-        {name}
+        Sort by: Newest
       </Button>
       <Popper
         open={open}
@@ -102,33 +85,29 @@ export default function DropDownButton({ name, id, subCategory }) {
                 placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >
-            <Paper className={classes.paper}>
+            <Paper>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
-                  onMouseOver={() => setOpen(true)}
-                  onMouseOut={() => setOpen(false)}
                   id="menu-list-grow"
                   onKeyDown={handleListKeyDown}
-                  className={classes.menulist}
                 >
-                  {subCategory.map((category) => (
-                    <MenuItem
-                      onMouseOver={() => setOpen(true)}
-                      onMouseOut={() => setOpen(false)}
-                      onClick={handleClose}
-                      key={Math.random()}
-                      className={classes.menuItem}
-                    >
-                      {category}
-                    </MenuItem>
-                  ))}
+                  <MenuItem onClick={handleClose} className={classes.menuItem}>
+                    Closest
+                  </MenuItem>
+                  <MenuItem onClick={handleClose} className={classes.menuItem}>
+                    Price Low to High
+                  </MenuItem>
+                  <MenuItem onClick={handleClose} className={classes.menuItem}>
+                    Price High to Low
+                  </MenuItem>
                 </MenuList>
               </ClickAwayListener>
             </Paper>
           </Grow>
         )}
       </Popper>
-    </>
+      {/* </div> */}
+    </div>
   );
 }
