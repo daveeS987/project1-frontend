@@ -9,6 +9,7 @@ import SettingsPwModal from './SettingsPwModal';
 const useStyles = makeStyles((theme) => ({
   title: {
     marginTop: '2rem',
+    marginBottom: '1.4rem',
   },
   root: {
     marginLeft: '0.8rem',
