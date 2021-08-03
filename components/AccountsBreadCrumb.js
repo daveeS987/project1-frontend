@@ -6,15 +6,13 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 const useStyles = makeStyles((theme) => ({
   bread: {
-    margin: '1rem',
+    margin: '2rem',
+    marginLeft: '1rem',
   },
 }));
 
 export default function AccountsBreadCrumb() {
   const classes = useStyles();
-  // const activeCategoryName = useSelector(
-  //   (state) => state.activeCategory.active.name
-  // );
 
   function handleClick(event) {
     event.preventDefault();

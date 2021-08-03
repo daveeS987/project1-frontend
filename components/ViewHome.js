@@ -1,10 +1,10 @@
-import SmallHeading from './SmallHeading';
+import HomeHeading from './HomeHeading';
 import Products from './Products';
 
 function ViewHome() {
   return (
     <div>
-      <SmallHeading />
+      <HomeHeading />
       <Products />
     </div>
   );
