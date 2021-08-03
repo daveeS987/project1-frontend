@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Modal, Button, Typography } from '@material-ui/core';
+import { CssTextField } from './CustomCssComponents/CssTextField';
 
 function getModalStyle() {
   const top = 50;
@@ -39,9 +40,20 @@ const useStyles = makeStyles((theme) => ({
   selection: {
     color: theme.palette.text.secondary,
   },
-  editbutton: {
-    fontWeight: 550,
-    fontSize: '1.3rem',
+  // textfield: {
+  //   color: '#00A87E',
+  //   width: '100%',
+  // },
+  insidebutton: {
+    width: '100%',
+    marginTop: '1rem',
+    marginBottom: '1rem',
+    height: '3rem',
+    textTransform: 'none',
+    fontSize: '1rem',
+  },
+  insidetitle: {
+    marginBottom: '1rem',
   },
 }));
 
@@ -60,10 +72,21 @@ export default function SettingsEmailModal() {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2>Enter Name</h2>
-      <p>Name</p>
-      <input></input>
-      <Button>save</Button>
+      <Typography variant="h5" className={classes.insidetitle}>
+        Enter Email
+      </Typography>
+      <Typography variant="h6" align="left">
+        Email Address
+      </Typography>
+      <CssTextField className={classes.textfield} variant="outlined" />
+      <br />
+      <Button
+        color="primary"
+        variant="contained"
+        className={classes.insidebutton}
+      >
+        Save
+      </Button>
     </div>
   );
 

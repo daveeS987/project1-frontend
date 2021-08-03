@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Modal, Button, Typography } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { Modal, Button, Typography, TextField } from '@material-ui/core';
+import { CssTextField } from './CustomCssComponents/CssTextField.js';
 
 function getModalStyle() {
   const top = 50;
@@ -18,9 +19,10 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: 400,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    borderRadius: 6,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    textAlign: 'center',
   },
   button: {
     padding: 0,
@@ -39,9 +41,20 @@ const useStyles = makeStyles((theme) => ({
   selection: {
     color: theme.palette.text.secondary,
   },
-  editbutton: {
-    fontWeight: 550,
-    fontSize: '1.3rem',
+  // textfield: {
+  //   color: '#00A87E',
+  //   width: '100%',
+  // },
+  insidebutton: {
+    width: '100%',
+    marginTop: '1rem',
+    marginBottom: '1rem',
+    height: '3rem',
+    textTransform: 'none',
+    fontSize: '1rem',
+  },
+  insidetitle: {
+    marginBottom: '1rem',
   },
 }));
 
@@ -60,10 +73,21 @@ export default function SettingsNameModal() {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2>Enter Name</h2>
-      <p>Name</p>
-      <input></input>
-      <Button>save</Button>
+      <Typography variant="h5" className={classes.insidetitle}>
+        Enter Name
+      </Typography>
+      <Typography variant="h6" align="left">
+        Name
+      </Typography>
+      <CssTextField className={classes.textfield} variant="outlined" />
+      <br />
+      <Button
+        color="primary"
+        variant="contained"
+        className={classes.insidebutton}
+      >
+        Save
+      </Button>
     </div>
   );
 
@@ -71,7 +95,11 @@ export default function SettingsNameModal() {
     <div>
       <Button onClick={handleOpen} className={classes.button}>
         <div className={classes.custombutton}>
-          <Typography variant="h6" className={classes.selection}>
+          <Typography
+            variant="h6"
+            color="secondary"
+            className={classes.selection}
+          >
             Name
           </Typography>
           <Typography variant="h6" className={classes.editbutton}>
