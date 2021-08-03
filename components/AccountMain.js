@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux';
 import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
-
+import { Switch, Case, Default } from 'react-if';
 import AccountsSideNavigation from './AccountsSideNavigation.js';
+import AccountPurchaseSalesView from './AccountPurchaseSalesView.js';
+import AccountPaymentMethodsView from './AccountPaymentMethodsView.js';
+import AccountSavedItemsView from './AccountSavedItemsView.js';
 import AccountSettingsView from './AccountSettingsView.js';
 
 const useStyles = makeStyles((theme) => ({
@@ -18,9 +22,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AccountsMain() {
+export default function AccountMain() {
   const classes = useStyles();
 
+  const view = useSelector((state) => state.accountView.active);
   return (
     <Grid
       container
@@ -41,7 +46,20 @@ export default function AccountsMain() {
 
       <Grid spacing={2} container item xs className={classes.rightSide}>
         <Grid container item xs={12}>
-          <AccountSettingsView />
+          <Switch>
+            <Case condition={view === 'PurchasesAndSales'}>
+              <AccountPurchaseSalesView />
+            </Case>
+            <Case condition={view === 'PaymentMethods'}>
+              <AccountPaymentMethodsView />
+            </Case>
+            <Case condition={view === 'SavedItems'}>
+              <AccountSavedItemsView />
+            </Case>
+            <Default>
+              <AccountSettingsView />
+            </Default>
+          </Switch>
         </Grid>
       </Grid>
     </Grid>
