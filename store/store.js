@@ -5,6 +5,7 @@ import view from './viewSlice.js';
 import activeCategory from './activeCategory.js';
 import sortProducts from './sortProductsSlice.js';
 import products from './productSlice.js';
+import accountView from './accountView.js';
 
 const makeStore = () =>
   configureStore({
@@ -13,6 +14,7 @@ const makeStore = () =>
       activeCategory,
       sortProducts,
       products,
+      accountView,
     },
     devTools: true,
   });

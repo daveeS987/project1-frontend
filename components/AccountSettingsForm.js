@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormAccountSettings() {
+function AccountSettingsForm() {
   const classes = useStyles();
   return (
     <div>
@@ -34,4 +34,4 @@ function FormAccountSettings() {
   );
 }
 
-export default FormAccountSettings;
+export default AccountSettingsForm;

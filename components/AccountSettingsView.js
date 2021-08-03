@@ -1,6 +1,6 @@
 import { Grid, Box, Paper, makeStyles, Typography } from '@material-ui/core';
 
-import FormAccountSettings from './FormAccountSettings';
+import AccountSettingsForm from './AccountSettingsForm';
 import AccountSettingAvatar from './AccountSettingAvatar';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ function AccountSettingsView() {
         <AccountSettingAvatar />
       </Grid>
       <Grid item xs={12}>
-        <FormAccountSettings />
+        <AccountSettingsForm />
       </Grid>
     </Grid>
   );

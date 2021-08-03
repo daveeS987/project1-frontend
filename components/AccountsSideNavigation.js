@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   FormLabel,
   FormControl,
@@ -8,10 +9,11 @@ import {
   makeStyles,
   Typography,
   Divider,
+  Button,
 } from '@material-ui/core';
-import { useSelector } from 'react-redux';
 
 import FormCondition from './FormCondition';
+import { changeAccountView } from '../store/accountView';
 
 const useStyles = makeStyles((theme) => ({
   window: {
@@ -47,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AccountsSideNavigation() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -56,29 +59,55 @@ export default function AccountsSideNavigation() {
           Transactions
         </Typography>
 
-        <Typography variant="body1" color="inherit" className={classes.indent2}>
-          Purchases & Sales
-        </Typography>
+        <Button
+          onClick={() => dispatch(changeAccountView('PurchasesAndSales'))}
+        >
+          <Typography
+            variant="body1"
+            color="inherit"
+            className={classes.indent2}
+          >
+            Purchases & Sales
+          </Typography>
+        </Button>
 
-        <Typography variant="body1" color="inherit" className={classes.indent2}>
-          Payment & Deposit methods
-        </Typography>
+        <Button onClick={() => dispatch(changeAccountView('PaymentMethods'))}>
+          <Typography
+            variant="body1"
+            color="inherit"
+            className={classes.indent2}
+          >
+            Payment & Deposit methods
+          </Typography>
+        </Button>
 
         <Typography variant="h6" className={classes.indent1}>
           Saves
         </Typography>
 
-        <Typography variant="body1" color="inherit" className={classes.indent2}>
-          Saved Items
-        </Typography>
+        <Button onClick={() => dispatch(changeAccountView('SavedItems'))}>
+          <Typography
+            variant="body1"
+            color="inherit"
+            className={classes.indent2}
+          >
+            Saved Items
+          </Typography>
+        </Button>
 
         <Typography variant="h6" className={classes.indent1}>
           Account
         </Typography>
 
-        <Typography variant="body1" color="inherit" className={classes.indent2}>
-          Account Settings
-        </Typography>
+        <Button onClick={() => dispatch(changeAccountView('Settings'))}>
+          <Typography
+            variant="body1"
+            color="inherit"
+            className={classes.indent2}
+          >
+            Account Settings
+          </Typography>
+        </Button>
 
         <Divider variant="middle" className={classes.divide} />
 
