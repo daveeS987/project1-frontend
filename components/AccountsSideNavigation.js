@@ -61,19 +61,6 @@ export default function AccountsSideNavigation() {
 
         <Button
           className={classes.buttons}
-          onClick={() => dispatch(changeAccountView('PurchasesAndSales'))}
-        >
-          <Typography
-            variant="body1"
-            color="inherit"
-            className={classes.selections}
-          >
-            Purchases & Sales
-          </Typography>
-        </Button>
-
-        <Button
-          className={classes.buttons}
           onClick={() => dispatch(changeAccountView('PaymentMethods'))}
         >
           <Typography
@@ -82,6 +69,18 @@ export default function AccountsSideNavigation() {
             className={classes.selections}
           >
             Payment & Deposit methods
+          </Typography>
+        </Button>
+        <Button
+          className={classes.buttons}
+          onClick={() => dispatch(changeAccountView('PurchasesAndSales'))}
+        >
+          <Typography
+            variant="body1"
+            color="inherit"
+            className={classes.selections}
+          >
+            Purchases & Sales
           </Typography>
         </Button>
 
