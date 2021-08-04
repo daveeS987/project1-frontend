@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { Grid, Box, Paper, makeStyles } from '@material-ui/core';
 import { Switch, Case, Default } from 'react-if';
+
 import AccountsSideNavigation from './AccountsSideNavigation.js';
-import AccountPurchaseSalesView from './AccountPurchaseSalesView.js';
-import AccountPaymentMethodsView from './AccountPaymentMethodsView.js';
+import AccountTransactions from './AccountTransactions.js';
 import AccountSavedItemsView from './AccountSavedItemsView.js';
 import AccountSettingsView from './AccountSettingsView.js';
 
@@ -48,10 +48,10 @@ export default function AccountMain() {
         <Grid container item xs={12}>
           <Switch>
             <Case condition={view === 'PurchasesAndSales'}>
-              <AccountPurchaseSalesView />
+              <AccountTransactions />
             </Case>
             <Case condition={view === 'PaymentMethods'}>
-              <AccountPaymentMethodsView />
+              <AccountTransactions />
             </Case>
             <Case condition={view === 'SavedItems'}>
               <AccountSavedItemsView />

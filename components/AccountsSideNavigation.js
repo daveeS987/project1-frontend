@@ -12,29 +12,29 @@ import {
   Button,
 } from '@material-ui/core';
 
-import FormCondition from './FormCondition';
 import { changeAccountView } from '../store/accountView';
 
 const useStyles = makeStyles((theme) => ({
-  window: {
+  root: {
     border: '1px solid grey',
     borderRadius: '.3rem',
     padding: '1.2rem',
     color: theme.palette.text.secondary,
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
   indent1: {
     paddingTop: '0.4rem',
-    paddingLeft: '1rem',
+    paddingLeft: '.8rem',
     paddingBottom: '0.4rem',
   },
-  indent2: {
-    paddingLeft: '2rem',
-    paddingBottom: '0.4rem',
+  buttons: {
+    width: '100%',
+    justifyContent: 'flex-start',
+  },
+  selections: {
+    textAlign: 'left',
+    paddingLeft: '1.6rem',
+    textTransform: 'none',
+    color: theme.palette.text.secondary,
   },
   divide: {
     marginTop: '1rem',
@@ -53,29 +53,33 @@ export default function AccountsSideNavigation() {
 
   return (
     <div>
-      <div className={classes.window}>
+      <div className={classes.root}>
         <Typography variant="h5">Account</Typography>
         <Typography variant="h6" className={classes.indent1}>
           Transactions
         </Typography>
 
         <Button
+          className={classes.buttons}
           onClick={() => dispatch(changeAccountView('PurchasesAndSales'))}
         >
           <Typography
             variant="body1"
             color="inherit"
-            className={classes.indent2}
+            className={classes.selections}
           >
             Purchases & Sales
           </Typography>
         </Button>
 
-        <Button onClick={() => dispatch(changeAccountView('PaymentMethods'))}>
+        <Button
+          className={classes.buttons}
+          onClick={() => dispatch(changeAccountView('PaymentMethods'))}
+        >
           <Typography
             variant="body1"
             color="inherit"
-            className={classes.indent2}
+            className={classes.selections}
           >
             Payment & Deposit methods
           </Typography>
@@ -85,11 +89,14 @@ export default function AccountsSideNavigation() {
           Saves
         </Typography>
 
-        <Button onClick={() => dispatch(changeAccountView('SavedItems'))}>
+        <Button
+          className={classes.buttons}
+          onClick={() => dispatch(changeAccountView('SavedItems'))}
+        >
           <Typography
             variant="body1"
             color="inherit"
-            className={classes.indent2}
+            className={classes.selections}
           >
             Saved Items
           </Typography>
@@ -99,11 +106,14 @@ export default function AccountsSideNavigation() {
           Account
         </Typography>
 
-        <Button onClick={() => dispatch(changeAccountView('Settings'))}>
+        <Button
+          className={classes.buttons}
+          onClick={() => dispatch(changeAccountView('Settings'))}
+        >
           <Typography
             variant="body1"
             color="inherit"
-            className={classes.indent2}
+            className={classes.selections}
           >
             Account Settings
           </Typography>

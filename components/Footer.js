@@ -30,15 +30,14 @@ function Footer() {
     <>
       <footer className={classes.footer}>
         <Typography variant="h6" align="center" gutterBottom color="primary">
-          Davee's Virtual Store
+          Davee's Offer Up Clone
         </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          component="p"
-          color="primary"
-        >
+        <Typography variant="subtitle1" align="center" color="primary">
           A mock offerup app built with NextJs, Material UI, MongoDB
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="primary">
+          Please don't sue me!! I did this for practice!! I'm a developer that
+          needs a job!!
         </Typography>
         <Typography
           variant="subtitle1"
