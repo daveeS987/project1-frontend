@@ -16,7 +16,36 @@ import AccountPurchaseSalesView from './AccountPurchaseSalesView';
 import AccountPaymentMethodsView from './AccountPaymentMethodsView';
 import { changeAccountView } from '../store/accountView';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
+  title: {
+    marginBottom: '2rem',
+    width: '100%',
+  },
+  appbar: {
+    width: '40rem',
+    border: `.1px solid ${theme.palette.text.secondary}`,
+    borderRadius: '.3rem .3rem 0 0',
+    boxShadow: 'none',
+  },
+  tabs: {
+    margin: 0,
+    padding: 0,
+  },
+  tab: {
+    width: '20rem',
+  },
+  tabpanel: {
+    margin: 0,
+    padding: 0,
+  },
+}));
+
 function TabPanel(props) {
+  const classes = useStyles();
   const { children, value, index, ...other } = props;
   return (
     <div
@@ -27,7 +56,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={3} className={classes.tabpanel}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -47,27 +76,6 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-  appbar: {
-    width: '40rem',
-    border: `.1px solid ${theme.palette.text.secondary}`,
-    borderRadius: '.3rem .3rem 0 0',
-    boxShadow: 'none',
-  },
-  panels: {
-    width: '20rem',
-  },
-  tabs: {},
-  title: {
-    marginBottom: '2rem',
-    width: '100%',
-  },
-}));
 
 export default function AccountTransactions() {
   const classes = useStyles();
@@ -116,15 +124,11 @@ export default function AccountTransactions() {
             indicatorColor="secondary"
             className={classes.tabs}
           >
-            <Tab
-              label="Accounts"
-              {...a11yProps(0)}
-              className={classes.panels}
-            />
+            <Tab label="Accounts" {...a11yProps(0)} className={classes.tab} />
             <Tab
               label="Transactions"
               {...a11yProps(1)}
-              className={classes.panels}
+              className={classes.tab}
             />
           </Tabs>
         </AppBar>
