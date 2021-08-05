@@ -10,6 +10,7 @@ export const accountViewSlice = createSlice({
   initialState,
   reducers: {
     changeAccountView: (state, action) => {
+      // options are: "PaymentMethods", 'PurchasesAndSales', 'SavedItems', 'Settings'
       state.active = action.payload;
     },
   },

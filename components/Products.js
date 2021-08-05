@@ -77,9 +77,6 @@ function Products() {
               <Button size="small" color="inherit">
                 Share
               </Button>
-              <Button size="small" color="inherit">
-                Learn More
-              </Button>
             </CardActions>
           </Card>
         </Grid>
