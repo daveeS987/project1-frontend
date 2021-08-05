@@ -8,7 +8,7 @@ const viewSlice = createSlice({
   initialState,
   reducers: {
     changeview(state, action) {
-      // you can do something here
+      // options are "accounts", "home", "category"
       state.show = action.payload;
     },
   },

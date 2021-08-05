@@ -19,6 +19,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
 import { changeview } from '../store/viewSlice';
+import { changeAccountView } from '../store/accountView';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -104,8 +105,11 @@ export default function Header() {
   const dispatch = useDispatch();
 
   function handleChangeView(view) {
-    console.log('changeview home was clicked');
     dispatch(changeview(view));
+  }
+  function changeAccounts(accountview) {
+    dispatch(changeview('accounts'));
+    dispatch(changeAccountView(accountview));
   }
 
   return (
@@ -136,7 +140,7 @@ export default function Header() {
           <div className={classes.sectionDesktop}>
             <IconButton
               color="inherit"
-              onClick={() => handleChangeView('accounts')}
+              onClick={() => changeAccounts('SavedItems')}
             >
               <Badge badgeContent={3} color="secondary">
                 <FavoriteBorderSharpIcon className={classes.icon} />
@@ -144,7 +148,7 @@ export default function Header() {
             </IconButton>
             <IconButton
               color="inherit"
-              onClick={() => handleChangeView('accounts')}
+              onClick={() => changeAccounts('PaymentMethods')}
             >
               <Badge badgeContent={3} color="secondary">
                 <MailIcon className={classes.icon} />
@@ -152,7 +156,7 @@ export default function Header() {
             </IconButton>
             <IconButton
               color="inherit"
-              onClick={() => handleChangeView('accounts')}
+              onClick={() => changeAccounts('PurchasesAndSales')}
             >
               <Badge badgeContent={12} color="secondary">
                 <LocalOfferOutlinedIcon className={classes.icon} />
@@ -161,7 +165,7 @@ export default function Header() {
             <IconButton
               edge="end"
               color="inherit"
-              onClick={() => handleChangeView('accounts')}
+              onClick={() => changeAccounts('Settings')}
             >
               <AccountCircle className={classes.icon} />
             </IconButton>

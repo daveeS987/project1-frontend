@@ -59,7 +59,7 @@ function AccountPaymentMethodsView() {
         <ListItem className={classes.listitem}>
           <Typography>Visa Card Example</Typography>
         </ListItem>
-        <ListItem className={classes.listitem}>
+        <ListItem className={classes.listitem} button>
           <Typography variant="h6" className={classes.creditcard}>
             Add credit/debit card
           </Typography>

@@ -3,7 +3,7 @@ import React from 'react';
 function AccountPurchaseSalesView() {
   return (
     <div>
-      <h3>This is the Purchases and Sales view</h3>
+      <h3>This will be a list of past transactions</h3>
     </div>
   );
 }
