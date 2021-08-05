@@ -13,10 +13,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AccountsBreadCrumb() {
   const classes = useStyles();
+  const accountView = useSelector((state) => state.accountView.active);
 
   function handleClick(event) {
     event.preventDefault();
-    console.info('You clicked a breadcrumb.');
   }
 
   return (
@@ -33,7 +33,7 @@ export default function AccountsBreadCrumb() {
       </Link>
 
       <Link color="inherit" onClick={handleClick}>
-        ** Reminder make this link dynamic **
+        {accountView}
       </Link>
     </Breadcrumbs>
   );

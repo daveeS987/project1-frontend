@@ -47,7 +47,7 @@ function ProductCategoryHeading() {
         </Typography>
         <ProductSortDropDown />
       </div>
-      {/* <div className={classes.chipsContainer}>
+      <div className={classes.chipsContainer}>
         {activeCategory.subCategory.map((category) => (
           <Chip
             label={category}
@@ -56,7 +56,7 @@ function ProductCategoryHeading() {
             key={Math.random()}
           />
         ))}
-      </div> */}
+      </div>
     </>
   );
 }
