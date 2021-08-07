@@ -15,17 +15,17 @@ const useStyles = makeStyles((theme) => ({
   button: {
     textTransform: 'none',
     color: theme.palette.text.secondary,
-    zIndex: 2000,
+    // zIndex: 2000,
   },
   paper: {
-    zIndex: 2000,
+    // zIndex: 2000,
   },
   menuItem: {
     color: theme.palette.text.secondary,
-    zIndex: 2000,
+    // zIndex: 2000,
   },
   menulist: {
-    zIndex: 2000,
+    // zIndex: 1,
   },
 }));
 
@@ -92,7 +92,7 @@ export default function DropDownButton({ name, id, subCategory }) {
         anchorEl={anchorRef.current}
         role={undefined}
         transition
-        disablePortal
+        // disablePortal
       >
         {({ TransitionProps, placement }) => (
           <Grow
