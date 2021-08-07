@@ -9,11 +9,12 @@
 <!-- http://localhost:5000 -->
 
 <!-- Front End -->
-<!-- https://offerupclone.vercel.app/ -->
+
+- [link](https://offerupclone.vercel.app/)
 
 ## Overview
 
-Practice Front End
+Practice Front End. work in progress....
 
 ## Tools & Dependencies
 
